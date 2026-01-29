@@ -74,7 +74,7 @@ export default function NavItems({
 
       {collapsed && open && (
         <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 z-50">
-          <div className="bg-base-100 rounded-2xl shadow-2xl p-2 min-w-[180px]">
+          <div className="bg-base-100 rounded-2xl shadow-2xl p-2 min-w-45">
             {submenu.map((item) => (
               <NavLink
                 key={item.label}
