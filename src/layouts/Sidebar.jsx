@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import NavItem from "./NavItems";
+import NavItems from "./NavItems";
 import { navConfig } from "./navConfig";
 import Logo from "../assets/logo.png";
 import CollabLogo from "../assets/logo1.png";
@@ -10,13 +10,16 @@ export default function Sidebar() {
   const [open, setOpen] = useState(true);
 
   return (
-    <aside
-      className={`
-        h-screen m-3 rounded-3xl bg-base-100 shadow-lg
-        flex flex-col transition-all duration-300
-        ${open ? "w-[240px]" : "w-[72px]"}
-      `}
-    >
+     <aside
+    className={`
+      h-full rounded-3xl bg-base-100
+      flex flex-col transition-all duration-300
+      ${open ? "w-[240px]" : "w-[72px]"}
+      border-r border-black/10
+      shadow-[4px_0_20px_rgba(0,0,0,0.08)]
+    `}
+  >
+
       <div className="flex-shrink-0">
         {open ? (
           <div className="h-16 w-full flex items-center justify-center relative">
@@ -70,24 +73,22 @@ export default function Sidebar() {
         )}
       </div>
 
-      {/* MENU (NO SCROLL) */}
-      <div className="mt-5 px-2 flex-1 overflow-hidden">
+      <div className="mt-5 px-2 flex-1 overflow-visible">
         <ul className="space-y-1">
           {navConfig.map((item) => (
-            <NavItem key={item.label} {...item} collapsed={!open} />
+            <NavItems
+              key={item.label}
+              {...item}
+              collapsed={!open}
+              onExpand={() => setOpen(true)}
+            />
           ))}
         </ul>
       </div>
 
-      {/* PROFILE */}
       <div className="flex-shrink-0 p-3">
-        <div
-          className={`
-            bg-base-200 rounded-2xl p-3 flex items-center gap-3
-            ${!open ? "justify-center" : ""}
-          `}
-        >
-          <div className="w-10 h-10 rounded-full bg-base-100 flex items-center justify-center font-semibold shrink-0">
+        <div className={`bg-base-200 rounded-2xl p-3 flex items-center gap-3 ${!open ? "justify-center" : ""}`}>
+          <div className="w-10 h-10 rounded-full bg-base-100 flex items-center justify-center font-semibold">
             S
           </div>
           {open && (
