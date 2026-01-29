@@ -14,13 +14,13 @@ export default function Sidebar() {
     className={`
       h-full rounded-3xl bg-base-100
       flex flex-col transition-all duration-300
-      ${open ? "w-[240px]" : "w-[72px]"}
+      ${open ? "w-60" : "w-18"}
       border-r border-black/10
       shadow-[4px_0_20px_rgba(0,0,0,0.08)]
     `}
   >
 
-      <div className="flex-shrink-0">
+      <div className="shrink-0">
         {open ? (
           <div className="h-16 w-full flex items-center justify-center relative">
             <img src={Logo} alt="Logo" className="w-25 h-25" />
@@ -44,7 +44,7 @@ export default function Sidebar() {
         )}
       </div>
 
-      <div className="flex-shrink-0">
+      <div className="shrink-0">
         {open ? (
           <div className="px-4 mt-3">
             <div className="relative">
@@ -55,10 +55,10 @@ export default function Sidebar() {
                 className="w-full h-11 pl-12 pr-20 rounded-xl bg-base-200 outline-none text-sm"
               />
               <div className="absolute right-3 top-1/2 -translate-y-1/2 flex gap-1">
-                <span className="px-2 py-[2px] text-xs bg-base-100 rounded-md shadow">
+                <span className="px-2 py-0.5 text-xs bg-base-100 rounded-md shadow">
                   ⌘
                 </span>
-                <span className="px-2 py-[2px] text-xs bg-base-100 rounded-md shadow">
+                <span className="px-2 py-0.5 text-xs bg-base-100 rounded-md shadow">
                   S
                 </span>
               </div>
@@ -86,7 +86,7 @@ export default function Sidebar() {
         </ul>
       </div>
 
-      <div className="flex-shrink-0 p-3">
+      <div className="shrink-0 p-3">
         <div className={`bg-base-200 rounded-2xl p-3 flex items-center gap-3 ${!open ? "justify-center" : ""}`}>
           <div className="w-10 h-10 rounded-full bg-base-100 flex items-center justify-center font-semibold">
             S
