@@ -23,4 +23,5 @@ export const navConfig = [
   { label: "Games", to: "/games", icon: CgGames },
   { label: "Notifications", to: "/notifications", icon: IoMdNotificationsOutline },
   { label: "Settings", to: "/settings", icon: IoSettingsOutline },
+  //{ label: "samplereallist", to: "/samplereallist", icon: IoSettingsOutline }
 ];
