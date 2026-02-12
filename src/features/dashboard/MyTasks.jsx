@@ -20,8 +20,8 @@ export default function MyTasks() {
       </h3>
 
       <ul className="space-y-4">
-        {tasks.map((task, i) => (
-          <li key={i} className="flex items-center justify-between">
+        {tasks.map((task, index) => (
+          <li key={index} className="flex items-center justify-between">
             <div>
               <p className="font-medium">{task.title}</p>
               <p className="text-sm text-slate-500">
